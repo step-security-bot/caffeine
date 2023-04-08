@@ -16,9 +16,9 @@ jobs:
         with:
           disable-sudo: true
           egress-policy: audit
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
       - name: Set up JDK ${{ env.JAVA_VERSION }}
-        uses: Wandalen/wretry.action@v1.0.36
+        uses: Wandalen/wretry.action@e6cf3db7de3777ba5f999f903c2f4efdd9ac7288 # v1.0.36
         timeout-minutes: 5
         with:
           action: actions/setup-java@v3
@@ -28,7 +28,7 @@ jobs:
           attempt_limit: 3
           attempt_delay: 2000
       - name: Setup Gradle
-        uses: Wandalen/wretry.action@v1.0.36
+        uses: Wandalen/wretry.action@e6cf3db7de3777ba5f999f903c2f4efdd9ac7288 # v1.0.36
         timeout-minutes: 5
         with:
           action: gradle/gradle-build-action@v2
@@ -40,7 +40,7 @@ jobs:
           attempt_limit: 3
           attempt_delay: 2000
       - name: Setup Maven
-        uses: actions/cache@v3
+        uses: actions/cache@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ env.JAVA_VERSION }}-${{ hashFiles('**/pom.xml') }}

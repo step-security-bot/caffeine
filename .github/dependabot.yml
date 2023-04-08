@@ -34,3 +34,14 @@ updates:
     directory: examples/hibernate
     schedule:
       interval: weekly
+
+
+  - package-ecosystem: maven
+    directory: /examples/coalescing-bulkloader
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /examples/write-behind-rxjava
+    schedule:
+      interval: daily

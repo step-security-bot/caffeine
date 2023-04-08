@@ -21,7 +21,7 @@ jobs:
         with:
           disable-sudo: true
           egress-policy: audit
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
       - name: Compute JMH Benchmark
         uses: ./.github/actions/run-gradle
         with:
@@ -32,7 +32,7 @@ jobs:
             -PincludePattern=ComputeBenchmark
             -PbenchmarkParameters=computeType=Caffeine,Guava,ConcurrentHashMap
       - name: Upload Compute JMH Results to Gist
-        uses: exuanbo/actions-deploy-gist@v1
+        uses: exuanbo/actions-deploy-gist@47697fceaeea2006a90594ee24eb9cd0a1121ef8 # v1.1.4
         if: >
           github.event_name == 'push'
           && endsWith(github.ref, github.event.repository.default_branch)
@@ -52,7 +52,7 @@ jobs:
             -PincludePattern=GetPutBenchmark
             -PbenchmarkParameters=cacheType=Caffeine,Guava,ConcurrentHashMap
       - name: Upload Get/Put JMH Results to Gist
-        uses: exuanbo/actions-deploy-gist@v1
+        uses: exuanbo/actions-deploy-gist@47697fceaeea2006a90594ee24eb9cd0a1121ef8 # v1.1.4
         if: >
           github.event_name == 'push'
           && endsWith(github.ref, github.event.repository.default_branch)
