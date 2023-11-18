@@ -30,7 +30,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Run Codacy Analysis
-        uses: codacy/codacy-analysis-cli-action@master
+        uses: codacy/codacy-analysis-cli-action@240c610b1b65402cda39c6355968ef50aa2c07ba # master
         continue-on-error: true
         with:
           format: sarif
